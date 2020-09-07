@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url shrinker</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid" style="background-color: #fde7f9;
+    background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
+    ">
+        <div class="container">
+            <h2 class="display-4">URL Shrinker</h2>
+            <p class="lead">This service lets you shorten long URLs for free. Just paste the URL that you want to
+                shrink.</p>
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <form id="Formid" action="" method="POST">
+            <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 lime-border" name="longUrl" type="url" placeholder="URL">
+                <div class="input-group-append">
+                    <button class="btn aqua-gradient btn-md my-0" type="submit">Shrink!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+        <% if(shortUrl !== null) { %>
+        <h5>Short URL here!: <a id="output" href="<%= shortUrl.shortUrl %>"><%= shortUrl.shortUrl %></a></h5>
+        <% } else { %>
+        <h5>Empty!</h5>
+        <% } %>
+        <br />
+        <button type="button" id="clear" class="btn btn-outline-danger waves-effect">Clear</button>
+
+    </div>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+    <script>
+        document.getElementById("clear").addEventListener("click", () => {
+            document.getElementById("output").classList.add("d-none");
+
+        })
+    </script>
+</body>
+
+</html>
